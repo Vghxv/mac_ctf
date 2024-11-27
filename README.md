@@ -13,8 +13,7 @@ This project implements a challenge to explore vulnerabilities in cryptographic 
 
 ### Running the Application
 
-- docker compose build
-- docker compose up
+- docker compose up -d
 
 ---
 

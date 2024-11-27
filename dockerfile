@@ -16,7 +16,6 @@ RUN poetry config virtualenvs.create false
 
 RUN poetry install --no-interaction --no-ansi
 
-# Copy the rest of the code
 COPY . /app
 
 EXPOSE 5000

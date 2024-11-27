@@ -1,2 +1,5 @@
 **/__pycache__/
 .venv/
+README.md
+report/
+docker-compose.yml
