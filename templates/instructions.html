@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MAC Forgery Challenge</title>
+    <style>
+        .hint1, .hint2 {
+            display: none;
+        }
+    </style>
+    <script>
+        function toggleHints1() {
+            const hints = document.querySelectorAll('.hint1');
+            hints.forEach(hint => {
+                hint.style.display = hint.style.display === 'none' ? 'list-item' : 'none';
+            });
+        }
+        function toggleHints2() {
+            const hints = document.querySelectorAll('.hint2');
+            hints.forEach(hint => {
+                hint.style.display = hint.style.display === 'none' ? 'list-item' : 'none';
+            });
+        }
+    </script>
+</head>
+<body>
+    <h1>Welcome to the MAC Forgery Challenge!</h1>
+    <p>Your objective is to forge a valid MAC for a given message.</p>
+    <p>You can use the following endpoints:</p>
+    <ul>
+        <li><strong>/mac</strong>: Obtain the MAC for a message of your choice.
+            <br>POST JSON: {"message": "your_message_here"}</li>
+        <li><strong>/submit</strong>: Submit your forged MAC for verification.
+            <br>POST JSON: {"mac": ["r_hex", "t1_hex", ..., "td_hex"], "message": "your_message_here"}</li>
+    </ul>
+    <p>Good luck!</p>
+    <button onclick="toggleHints1()">Hints 1</button>
+    <ul>
+        <li class="hint1">- The MAC algorithm (`Vulnerable_Mac`) simplifies block-based MAC construction but lacks essential cryptographic safeguards. (namely, the length parameter `l`, uniformly random `r` and the order `i` of the block)</li>
+    </ul>
+    <button onclick="toggleHints2()">Hints 2</button>
+    <ul>
+        <li class="hint2">- The `SECRET_KEY` is generated randomly and is not known to you. R, however, is fixed and known to you. </li>
+    </ul>
+</body>
+</html>
