@@ -11,9 +11,20 @@ This project implements a challenge to explore vulnerabilities in cryptographic 
 
 ## Setup and Execution
 
-### Running the Application
+### Running Locally
 
-- docker compose up -d
+Clone the repository and navigate to the project directory. 
+
+```bash
+docker compose up -d
+```
+
+### Docker
+
+``` bash
+docker pull vincent333/mac-ctf
+docker run -d -t -p 5000:5000 --name mac-ctf vincent333/mac-ctf
+```
 
 ---
 
